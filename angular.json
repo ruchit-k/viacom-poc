@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "grid-demo": {
+    "viapoc": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/grid-demo",
+            "outputPath": "dist/viapoc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -27,10 +27,32 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/css_variables.css",
+                "input": "./node_modules/@sap-theming/theming-base-content/content/Base/baseLib/",
+                "output": "./assets/theming-base/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/fundamental-styles/dist/theming/",
+                "output": "./assets/fundamental-styles-theming/"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/@fundamental-ngx/core/styles/fundamental-ngx-core.css",
+              "./node_modules/fundamental-styles/dist/fonts/sap_fonts.css",
+              {
+                "input": "./node_modules/fundamental-styles/dist/fonts/sap_fiori_3_fonts.css",
+                "inject": false,
+                "bundleName": "sap_fiori_3_fonts"
+              },
+              {
+                "input": "./node_modules/fundamental-styles/dist/fonts/sap_horizon_fonts.css",
+                "inject": false,
+                "bundleName": "sap_horizon_fonts"
+              }
             ],
             "scripts": []
           },
@@ -65,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "grid-demo:build:production"
+              "browserTarget": "viapoc:build:production"
             },
             "development": {
-              "browserTarget": "grid-demo:build:development"
+              "browserTarget": "viapoc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "grid-demo:build"
+            "browserTarget": "viapoc:build"
           }
         },
         "test": {

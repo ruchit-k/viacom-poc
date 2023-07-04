@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GridTableComponent } from './modules/grid-table/grid-table.component';
-import { OverViewComponent } from './modules/over-view/over-view.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'ag-grid-table', component: GridTableComponent },
-  { path: 'sync-fusion', component: OverViewComponent },
+  {path:"", component:HomeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
