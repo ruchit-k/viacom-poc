@@ -1,0 +1,36 @@
+.header {
+    position: sticky;
+    inset: 0;
+    z-index: 999;
+    background-color: var(--rich-blue-color);
+    height: var(--header-height);
+    color: #FFF;
+    padding: 5px 20px;
+
+    nav {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            font-weight: bold;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .name{
+                font-weight: bold;
+            }
+
+            .picture>img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

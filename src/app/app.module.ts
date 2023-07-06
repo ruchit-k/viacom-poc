@@ -8,9 +8,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { OverViewComponent } from './modules/over-view/over-view.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, GridTableComponent, OverViewComponent],
+  declarations: [AppComponent, GridTableComponent, OverViewComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
